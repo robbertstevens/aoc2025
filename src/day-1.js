@@ -6,6 +6,7 @@ export class Wrapnum {
         this.index = start
         this.min = min
         this.max = max
+        this.history = []
     }
 
     /**
@@ -20,8 +21,13 @@ export class Wrapnum {
             if (this.index > this.max) {
                 this.index = this.min
             }
+
             if(this.index < this.min) {
                 this.index = this.max
+            }
+
+            if (this.index === 0) {
+                this.history.push(this.index)
             }
         }
 
@@ -35,7 +41,6 @@ export class Wrapnum {
 export function findCode(input) {
     const wrapnum = new Wrapnum(50, 0, 99);
 
-    const history = []
 
     const digits = input.map((i) => {
         if (i.startsWith('L')) {
@@ -48,10 +53,10 @@ export function findCode(input) {
     })
 
     for (const digit of digits) {
-        history.push(wrapnum.increment(digit))
+        wrapnum.increment(digit)
     }
 
-    return history
+    return wrapnum.history
 }
 
 //
