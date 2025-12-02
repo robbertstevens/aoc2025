@@ -1,14 +1,11 @@
 import {readFile} from "node:fs/promises";
 
 /**
- *
+ * @see https://www.baeldung.com/java-repeated-substring#efficient
  * @param {string} id
  */
 export function isValidId(id) {
-    const c = id.split('')
-
-    const first = c.splice(0, c.length / 2)
-    return c.join('') !== first.join('')
+    return ((id + id).indexOf(id, 1)) === id.length
 }
 
 /**
