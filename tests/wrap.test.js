@@ -30,5 +30,5 @@ test("sequence", () => {
         "L82",
     ]
 
-    expect(findCode(input).filter(i=> i===0).length).toBe(3)
+    expect(findCode(input).filter(i => i === 0).length).toBe(6)
 })

@@ -41,7 +41,6 @@ export class Wrapnum {
 export function findCode(input) {
     const wrapnum = new Wrapnum(50, 0, 99);
 
-
     const digits = input.map((i) => {
         if (i.startsWith('L')) {
             return Number(-i.slice(1, i.length))
@@ -58,20 +57,6 @@ export function findCode(input) {
 
     return wrapnum.history
 }
-
-//
-const commands = [
-    "L68",
-    "L30",
-    "R48",
-    "L5",
-    "R60",
-    "L55",
-    "L1",
-    "L99",
-    "R14",
-    "L82",
-]
 
 const body = await readFile('./input/day-1.txt', "utf-8")
 
