@@ -1,5 +1,6 @@
 import {expect, test} from 'vitest'
-import {findCode, Wrapnum} from "../src/day-1";
+import {findCode} from "../src/day-1";
+import {Wrapnum} from "../src/wrapnum";
 
 test.each([
     [0, -1, 99],
