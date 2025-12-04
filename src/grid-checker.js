@@ -20,7 +20,6 @@ export function gridChecker(grid) {
             ]
 
             if (surrounding.filter((s) => s === '@').length < 4) {
-                // grid[y][x] = '.'
                 points.push([y, x])
             }
         }
