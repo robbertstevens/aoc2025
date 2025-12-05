@@ -73,6 +73,9 @@ export function freshAccordingToRanges() {
         const max = (a, b) => a > b ? a : b
 
 
+        /**
+         * @see https://www.baeldung.com/java-collection-merge-overlapping-intervals
+         */
         const merge = (intervals) => {
             intervals.sort((a, b) => {
                 return a[RANGE_START] > b[RANGE_START] ? 1 : -1;
